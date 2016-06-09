@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MoLIX-Project name="Hotel Manager" 
+               xmlns="http://www.inf.puc-rio.br/~brunosantana/MoLIX"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.inf.puc-rio.br/~brunosantana/MoLIX http://www.inf.puc-rio.br/~brunosantana/MoLIX/MoLIX-Project.xsd">
+
+  <userGoalModel id="ugm1">
+    <userGoal id="ug1" name="Make Reservation"/>
+  </userGoalModel>
+  <signSchema id="ss1">
+    <signs>
+      <sign id="s1" name="city"/>
+      <sign id="s2" name="check-in"/>
+      <sign id="s3" name="check-out"/>
+      <sign id="s4" name="num-rooms"/>
+      <sign id="s5" name="num-adults"/>
+      <sign id="s6" name="num-children"/>
+      <sign id="s7" name="hotel.name"/>
+      <sign id="s8" name="hotel.info"/>
+      <sign id="s9" name="hotel.price"/>
+      <sign id="s10" name="room.type"/>
+      <sign id="s11" name="room.info"/>
+      <sign id="s12" name="room.price"/>
+      <sign id="s13" name="booking code"/>
+      <sign id="s14" name="instructions"/>
+      <sign id="s15" name="holtel"/>
+      <sign id="s16" name="name"/>
+      <sign id="s17" name="e-mail"/>
+      <sign id="s18" name="address"/>
+      <sign id="s19" name="credit card"/>
+      <sign id="s20" name="type of bed"/>
+      <sign id="s21" name="smoking preference"/>
+    </signs>
+  </signSchema>
+  <interactionModel id="im1">
+    <situatedSignTokens>
+      <situatedSignToken id="sst1" sign="s1" name="city"/>
+      <situatedSignToken id="sst2" sign="s2" name="check-in"/>
+      <situatedSignToken id="sst3" sign="s3" name="check-out"/>
+      <situatedSignToken id="sst4" sign="s4" name="num-rooms"/>
+      <situatedSignToken id="sst5" sign="s5" name="num-adults"/>
+      <situatedSignToken id="sst6" sign="s6" name="num-children"/>
+      <situatedSignToken id="sst7" sign="s6" name="pick(1,set(city))"/>
+    </situatedSignTokens>
+    <scenes>
+      <scene id="scene1" topic="Search for hotels">
+        <dialogStructure>
+          <dialog id="dialog1" description="inform reservation options">
+            <situatedSignToken>sst1</situatedSignToken>
+            <situatedSignToken>sst2</situatedSignToken>
+            <situatedSignToken>sst3</situatedSignToken>
+            <situatedSignToken>sst4</situatedSignToken>
+            <situatedSignToken>sst5</situatedSignToken>
+            <situatedSignToken>sst6</situatedSignToken>
+          </dialog>
+        </dialogStructure>
+      </scene>
+      <scene id="scene2" topic="Desambiguate City">
+        <dialogStructure>
+          <dialog id="dialog2" description="choose among found cities">
+            <situatedSignToken>sst7</situatedSignToken>            
+          </dialog>
+        </dialogStructure>
+      </scene>
+      <scene id="scene3" topic="Choose hotel">
+        <dialogStructure>
+          <dialog id="dialog3" description="choose available hotel"/>
+        </dialogStructure>
+      </scene>
+      <scene id="scene4" topic="Choose type of room">
+        <dialogStructure>
+          <dialog id="dialog4" description="choose available room"/>
+        </dialogStructure>
+      </scene>
+      <scene id="scene5" topic="Inform billing and room details">
+        <dialogStructure>
+          <dialog id="dialog5" description="examine reservation info"/>
+          <dialog id="dialog6" description="inform billing details"/>
+          <dialog id="dialog7" description="inform room details"/>
+        </dialogStructure>
+      </scene>
+      <scene id="scene6" topic="Review booking information">
+        <dialogStructure>
+          <dialog id="dialog8" description="examine reservation info"/>
+          <dialog id="dialog9" description="examine billing info"/>
+          <dialog id="dialog10" description="examine room details"/>
+        </dialogStructure>
+      </scene>
+      <scene id="scene7" topic="Final booking information">
+        <dialogStructure>
+          <dialog id="dialog11" description="save for future reference"/>
+          <dialog id="dialog12" description="examine reservation info"/>
+          <dialog id="dialog13" description="examine billing info"/>
+          <dialog id="dialog14" description="examine room details"/>
+        </dialogStructure>
+      </scene>
+    </scenes>
+    <systemProcesses>
+      <systemProcess id="system1"/>
+      <systemProcess id="system2"/>
+      <systemProcess id="system3"/>
+      <systemProcess id="system4"/>
+    </systemProcesses>
+    <transitionUtterances>
+      <transitionUtterance id="tu1" description="u:[URL]" emitter="user" isBreakdown="false" source="op1" target="scene1"/>
+      <transitionUtterance id="tu2" description="u:[go]" emitter="user" isBreakdown="false" source="scene1" target="system1"/>
+      <transitionUtterance id="tu3" description="d:check-in date must be before check-out;d:no rooms available" emitter="deputy" isBreakdown="true" source="system1" target="scene1"/>
+      <transitionUtterance id="tu4" description="d:multiple cities found" emitter="deputy" isBreakdown="true" source="system1" target="scene2"/>
+      <transitionUtterance id="tu5" description="d:done" emitter="deputy" isBreakdown="false" source="system1" target="scene3"/>
+      <transitionUtterance id="tu6" description="u:[go]" emitter="user" isBreakdown="false" source="scene2" target="system2"/>
+      <transitionUtterance id="tu7" description="d:no rooms available" emitter="deputy" isBreakdown="true" source="system2" target="scene1"/>
+      <transitionUtterance id="tu8" description="d:done" emitter="deputy" isBreakdown="false" source="system2" target="scene2"/>
+      <transitionUtterance id="tu9" description="u:[book it]" emitter="user" isBreakdown="false" source="scene3" target="scene4"/>
+      <transitionUtterance id="tu10" description="u:[book room]" emitter="user" isBreakdown="false" source="scene4" target="scene5"/>
+      <transitionUtterance id="tu11" description="u:[proceed with booking]" emitter="user" isBreakdown="false" source="scene5" target="system3"/>
+      <transitionUtterance id="tu12" description="d:incomplete info" emitter="deputy" isBreakdown="true" source="system3" target="scene5"/>
+      <transitionUtterance id="tu13" description="d:done" emitter="deputy" isBreakdown="false" source="system3" target="scene6"/>
+      <transitionUtterance id="tu14" description="u:[change billing, guest,or room details]" emitter="user" isBreakdown="false" source="scene6" target="scene5"/>
+      <transitionUtterance id="tu15" description="u:[confirm]" emitter="user" isBreakdown="false" source="scene6" target="system4"/>
+      <transitionUtterance id="tu16" description="d:unexpected error; please retry" emitter="deputy" isBreakdown="true" source="system4" target="scene6"/>
+      <transitionUtterance id="tu17" description="d:done" emitter="deputy" isBreakdown="false" source="system4" target="scene7"/>
+      <transitionUtterance id="tu18" description="u:[change reservation info]" emitter="user" isBreakdown="false" source="u1" target="scene1"/>
+    </transitionUtterances>
+    <openingPoints>
+      <openingPoint id="op1"/>
+    </openingPoints>
+    <ubiquitousAccesses>
+      <ubiquitousAccess id="u1" name="U1"/>
+    </ubiquitousAccesses>
+  </interactionModel>
+</MoLIX-Project>

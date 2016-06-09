@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MoLIC_WOz_Desktop_User.db_molic_wozDataSet" Collapsed="true">
+    <Position X="3.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IACARCAAAyAAgAJABAAAQABAABgCQBhAAAAAAAGABBA=</HashCode>
+      <FileName>db_molic_wozDataSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoLIC_WOz_Desktop_User.FormInteractionSimulation" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="2.25" />
+    <NestedTypes>
+      <Class Name="MoLIC_WOz_Desktop_User.FormInteractionSimulation.ComponentsPosition" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>FormInteractionSimulation.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="MoLIC_WOz_Desktop_User.FormInteractionSimulation.DialogOption" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>FormInteractionSimulation.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>IxEAIARACCAkgBAsNDCiCAIaAJxRAAAACEAAQcIEAQA=</HashCode>
+      <FileName>FormInteractionSimulation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoLIC_WOz_Desktop_User.FormWaitConnection" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAgEAAYAACAAgJEAgACAiEACAACEAAAAAAAEAYIEAgA=</HashCode>
+      <FileName>FormWaitConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoLIC_WOz_Desktop_User.Program" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoLIC_WOz_Desktop_User.db_molic_wozDataSetTableAdapters.TB_HISTORYSTableAdapter" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+      <FileName>db_molic_wozDataSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoLIC_WOz_Desktop_User.db_molic_wozDataSetTableAdapters.TB_DIALOGSTableAdapter" Collapsed="true">
+    <Position X="8.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoLIC_WOz_Desktop_User.db_molic_wozDataSetTableAdapters.TB_SIGNSTableAdapter" Collapsed="true">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoLIC_WOz_Desktop_User.db_molic_wozDataSetTableAdapters.TB_SIMULATIONSTableAdapter" Collapsed="true">
+    <Position X="7" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoLIC_WOz_Desktop_User.db_molic_wozDataSetTableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="7" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQBBACABAABABAkBQAAAMACgAAACgAAAAAQAAAAABAU=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoLIC_WOz_Desktop_User.Properties.Resources" Collapsed="true">
+    <Position X="3.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoLIC_WOz_Desktop_User.Properties.Settings" Collapsed="true">
+    <Position X="5.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

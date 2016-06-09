@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.inf.puc-rio.br/~brunosantana/MoLIX" xmlns:molix="http://www.inf.puc-rio.br/~brunosantana/MoLIX" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="http://www.inf.puc-rio.br/~brunosantana/MoLIX/MoLIX-UserModel.xsd" />
+  <xs:include schemaLocation="http://www.inf.puc-rio.br/~brunosantana/MoLIX/MoLIX-UserGoalModel.xsd" />
+  <xs:include schemaLocation="http://www.inf.puc-rio.br/~brunosantana/MoLIX/MoLIX-SignSchema.xsd" />
+  <xs:include schemaLocation="http://www.inf.puc-rio.br/~brunosantana/MoLIX/MoLIX-InteractionModel.xsd" />
+  <xs:complexType name="MolicExpression" abstract="true">
+    <xs:attribute name="name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="MoLIX-Project">
+    <xs:sequence>
+      <xs:element name="content" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="userModel" type="molix:userModel" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="userGoalModel" type="molix:userGoalModel" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="signSchema" type="molix:signSchema" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="interactionModel" type="molix:interactionModel" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="expression" type="molix:MolicExpression" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" />
+    <xs:attribute name="id" type="xs:ID" />
+  </xs:complexType>
+  <xs:element name="MoLIX-Project" type="molix:MoLIX-Project" />
+</xs:schema>
